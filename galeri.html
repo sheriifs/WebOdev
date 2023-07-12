@@ -124,6 +124,8 @@
 
 
     <body>
+
+
         <header>
             <h1 class="site-heading text-center text-faded d-none d-lg-block">
                 <span class="site-heading-upper text-primary mb-3">Hayallerinizdeki oyunlar için bizimle çalışın</span>
@@ -140,38 +142,85 @@
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">OyunGeliştiricisi</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">Hakkımızda</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">Oyunlarım</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="galeri.html">Galeri</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="galeri.html">Blog</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="form.html">İletişim</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         
+        <h1>Oyun Tasarımcısı Gereksinimleri</h1>
+        <p>Video Oyun Tasarımcısı Eğitim Gereksinimleri
+          Video oyun tasarımcısı eğitimi gereksinimleri, oyun tasarım iş uzmanlığınıza göre değişir. Oyun tasarımı eğitim programları, tasarım, sanat ve programlama olmak üzere üç ana disipline odaklanır. Kişisel ilgi alanlarınız, tutkularınız ve çalışma hedefleriniz, hangi video oyun tasarım eğitim programının, istediğiniz işe alabilmenin en uygun olduğunu belirleyecektir. İşte oyun tasarım uzmanlığı ile video oyun tasarımcısı eğitimi gereksinimlerinin dökümü:
+          
+          Video Oyunu Tasarımcısı
+          Oyun tasarımı veya yaratıcı yazarlığın bir üniversite derecesi veya sertifikası, bir video oyun tasarımcısı olarak işe alınmanıza yardımcı olacaktır. Bir video oyun tasarımcısı eğitim programında aranacak beceriler arasında oyun teorisi, hikaye anlatımı ve storyboard, oyun planlama ve strateji, yaratıcı içerik yazma, beyin fırtınası ve yaratıcı düşünme ve oyun tasarımı proje yönetimi bulunur.
+          
+          Video Oyun Programcısı
+          Oyun tasarımı programlama işleri için, eğitim gereksinimi tipik olarak video oyun geliştirme, bilgisayar bilimleri, yazılım mühendisliği, mobil uygulama geliştirme, oyun ve simülasyon programlama veya benzeri program odaklı çalışma alanlarında lisans derecesidir. Video oyun programcıları, Java, C ve C ++ gibi video oyun tasarımında yaygın olarak kullanılan nesne tabanlı programlamaya (OOP) uygun akıcı olmalıdır.</p>
 
-        <h1>Resim Galerisi</h1>
+       <h1>Resim Galerisi</h1>
 
 <div class="gallery cf">
   <div>
-    <img src="assets/img/g1.jpg" />
+    <img src="" id="img1" />
+    <img src="" id="img2" />
   </div>
   <div>
-    <img src="assets/img/g2.jpg" />
+    <img src="" id="img3" />
+    <img src="" id="img4" />
   </div>
   <div>
-    <img src="assets/img/g3.jpg" />
-  </div>
-  <div>
-    <img src="assets/img/g4.jpg" />
-  </div>
-  <div>
-    <img src="assets/img/g5.jpg" />
-  </div>
-  <div>
-    <img src="assets/img/g6.jpg" />
+    <img src="" id="img5" />
+    <img src="" id="img6" />
   </div>
 </div>
 
 <br><br>
+
+<script>
+ 
+  var images = [
+    "assets/img/g1.jpg",
+    "assets/img/g2.jpg",
+    "assets/img/g3.jpg",
+    "assets/img/g4.jpg",
+    "assets/img/g5.jpg",
+    "assets/img/g6.jpg"
+  ];
+
+  
+  function placeRandomImages() {
+    var usedImages = []; 
+
+    
+    var divs = document.querySelectorAll('.gallery div');
+    divs.forEach(function(div) {
+      var imgElements = div.getElementsByTagName('img');
+
+      
+      for (var i = 0; i < imgElements.length; i++) {
+        var randomIndex = Math.floor(Math.random() * images.length); 
+        var randomImage = images[randomIndex];
+
+        
+        if (usedImages.indexOf(randomImage) === -1) {
+          usedImages.push(randomImage); 
+        } else {
+          
+          randomIndex = Math.floor(Math.random() * images.length);
+          randomImage = images[randomIndex];
+        }
+
+        imgElements[i].src = randomImage; 
+      }
+    });
+  }
+
+  
+  window.onload = placeRandomImages;
+</script>
+
 
             </div>
         </section>
